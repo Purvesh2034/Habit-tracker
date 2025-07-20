@@ -2,95 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Habit Tracker Design System - Modern, motivational, and beautiful */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Background & Text */
+    --background: 240 17% 98%;
+    --foreground: 240 15% 9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card & Surface */
+    --card: 240 20% 99%;
+    --card-foreground: 240 15% 9%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover & Dropdown */
+    --popover: 240 20% 99%;
+    --popover-foreground: 240 15% 9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand - Vibrant Blue-Purple Gradient */
+    --primary: 250 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 260 95% 75%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft Purple */
+    --secondary: 250 25% 95%;
+    --secondary-foreground: 250 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Success - Nature Green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-glow: 142 86% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Warning - Energetic Orange */
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Achievement Gold */
+    --achievement: 45 93% 58%;
+    --achievement-foreground: 45 15% 15%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Muted & Neutral */
+    --muted: 240 25% 96%;
+    --muted-foreground: 240 10% 45%;
 
-    --radius: 0.5rem;
+    /* Accent - Motivational Teal */
+    --accent: 175 84% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --sidebar-background: 0 0% 98%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Borders & Inputs */
+    --border: 240 25% 88%;
+    --input: 240 25% 88%;
+    --ring: 250 84% 60%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --radius: 0.75rem;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
+    --gradient-achievement: linear-gradient(135deg, hsl(var(--achievement)), hsl(45 100% 65%));
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(240 25% 96%));
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Beautiful Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(240 25% 25% / 0.08);
+    --shadow-primary: 0 8px 30px -6px hsl(var(--primary) / 0.25);
+    --shadow-success: 0 8px 30px -6px hsl(var(--success) / 0.25);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Smooth Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Background & Text */
+    --background: 240 15% 6%;
+    --foreground: 240 10% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Dark Card & Surface */
+    --card: 240 15% 8%;
+    --card-foreground: 240 10% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Dark Popover */
+    --popover: 240 15% 8%;
+    --popover-foreground: 240 10% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary - Brighter in dark mode */
+    --primary: 250 90% 65%;
+    --primary-foreground: 240 15% 6%;
+    --primary-glow: 260 100% 80%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Dark Secondary */
+    --secondary: 240 15% 12%;
+    --secondary-foreground: 240 10% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Success - Vibrant in dark */
+    --success: 142 84% 42%;
+    --success-glow: 142 94% 50%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Dark Muted */
+    --muted: 240 15% 12%;
+    --muted-foreground: 240 8% 60%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Dark Accent */
+    --accent: 175 90% 60%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark Borders */
+    --border: 240 15% 15%;
+    --input: 240 15% 15%;
+    --ring: 250 90% 65%;
+
+    /* Dark Gradients */
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(240 15% 4%));
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.2);
   }
 }
 
@@ -101,5 +127,63 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  /* Beautiful glassmorphism effects */
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: hsl(var(--background) / 0.75);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Hover effects for interactive elements */
+  .hover-lift {
+    transition: var(--transition);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Achievement glow animation */
+  .achievement-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .achievement-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--achievement) / 0.4), transparent);
+    transition: left 0.8s;
+  }
+
+  .achievement-glow:hover::before {
+    left: 100%;
   }
 }
